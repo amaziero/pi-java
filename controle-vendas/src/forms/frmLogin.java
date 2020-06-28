@@ -113,10 +113,16 @@ public class frmLogin extends javax.swing.JFrame {
         
         if(dados.validateUserName(tfUser.getText(),
                 new String(tfPassworld.getPassword()))) {
-            
             JOptionPane.showMessageDialog(rootPane, "Usuario e Senha corretos");
+            tfUser.setText("");
+            tfPassworld.setText("");
+            return;            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Usuario e senha incorretos");
+            JOptionPane.showMessageDialog(
+                    rootPane, "Usuario e senha incorretos");
+            tfUser.setText("");
+            tfPassworld.setText("");
+            tfUser.requestFocus();
         }
     }//GEN-LAST:event_btLoginActionPerformed
 
