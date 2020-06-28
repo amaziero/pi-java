@@ -6,6 +6,7 @@
 package forms;
 
 import classes.Data;
+import classes.frmPrincipal;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,10 +114,10 @@ public class frmLogin extends javax.swing.JFrame {
         
         if(dados.validateUserName(tfUser.getText(),
                 new String(tfPassworld.getPassword()))) {
-            JOptionPane.showMessageDialog(rootPane, "Usuario e Senha corretos");
-            tfUser.setText("");
-            tfPassworld.setText("");
-            return;            
+            frmPrincipal principalForm = new frmPrincipal();
+            this.setVisible(false);
+            principalForm.setVisible(true);
+                        
         } else {
             JOptionPane.showMessageDialog(
                     rootPane, "Usuario e senha incorretos");
