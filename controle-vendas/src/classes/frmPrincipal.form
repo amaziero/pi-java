@@ -108,11 +108,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastrar novo Item"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuRegistersAddMouseClicked"/>
+              </Events>
             </Menu>
             <Menu class="javax.swing.JMenu" name="menuRegistersMaterials">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entrada de Material"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuRegistersMaterialsMouseClicked"/>
+              </Events>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>

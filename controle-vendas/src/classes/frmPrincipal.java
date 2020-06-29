@@ -5,6 +5,7 @@
  */
 package classes;
 
+import forms.frmAdicionarMaterial;
 import forms.frmCadastroItems;
 
 /**
@@ -101,9 +102,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
 
         menuRegistersAdd.setText("Cadastrar novo Item");
+        menuRegistersAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRegistersAddMouseClicked(evt);
+            }
+        });
         menuRegisters.add(menuRegistersAdd);
 
         menuRegistersMaterials.setText("Entrada de Material");
+        menuRegistersMaterials.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRegistersMaterialsMouseClicked(evt);
+            }
+        });
         menuRegisters.add(menuRegistersMaterials);
         menuRegisters.add(jSeparator1);
 
@@ -152,6 +163,16 @@ public class frmPrincipal extends javax.swing.JFrame {
         desktopPane.add(cadastroItem);
         cadastroItem.show();
     }//GEN-LAST:event_menuRegistersMouseClicked
+
+    private void menuRegistersAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegistersAddMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuRegistersAddMouseClicked
+
+    private void menuRegistersMaterialsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegistersMaterialsMouseClicked
+        frmAdicionarMaterial adicionarMaterial = new frmAdicionarMaterial();
+        desktopPane.add(adicionarMaterial);
+        adicionarMaterial.show();
+    }//GEN-LAST:event_menuRegistersMaterialsMouseClicked
 
     /**
      * @param args the command line arguments
