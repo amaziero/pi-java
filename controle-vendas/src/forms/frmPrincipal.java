@@ -121,6 +121,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuRegisters);
 
         menuSells.setText("Vendas");
+        menuSells.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSellsMouseClicked(evt);
+            }
+        });
 
         menuNewSell.setText("Nova Venda");
         menuSells.add(menuNewSell);
@@ -128,12 +133,22 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuSells);
 
         menuConsultations.setText("Consultas");
+        menuConsultations.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuConsultationsMouseClicked(evt);
+            }
+        });
 
         menuConsultationsSells.setText("Vendas");
         menuConsultations.add(menuConsultationsSells);
 
         menuConsultationsStock.setText("Entradas no estoque");
         menuConsultationsStock.setToolTipText("");
+        menuConsultationsStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuConsultationsStockMouseClicked(evt);
+            }
+        });
         menuConsultations.add(menuConsultationsStock);
         menuConsultations.add(jSeparator2);
 
@@ -173,6 +188,30 @@ public class frmPrincipal extends javax.swing.JFrame {
         desktopPane.add(adicionarMaterial);
         adicionarMaterial.show();
     }//GEN-LAST:event_menuRegistersMaterialsMouseClicked
+
+    private void menuSellsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSellsMouseClicked
+       
+        frmNovaVenda novaVenda = new frmNovaVenda();
+        desktopPane.add(novaVenda);
+        novaVenda.show();
+// TODO add your handling code here:
+    }//GEN-LAST:event_menuSellsMouseClicked
+
+    private void menuConsultationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultationsMouseClicked
+        
+        frmConsultaVenda consultaVenda = new frmConsultaVenda();
+        desktopPane.add(consultaVenda);
+        consultaVenda.show();
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_menuConsultationsMouseClicked
+
+    private void menuConsultationsStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultationsStockMouseClicked
+       
+        frmConsultaEntradaMaterial consultaEntradaMaterial = new frmConsultaEntradaMaterial();
+        desktopPane.add(consultaEntradaMaterial);
+        consultaEntradaMaterial.show(); // TODO add your handling code here:
+    }//GEN-LAST:event_menuConsultationsStockMouseClicked
 
     /**
      * @param args the command line arguments
