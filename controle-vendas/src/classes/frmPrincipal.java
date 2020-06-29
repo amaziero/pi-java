@@ -5,6 +5,8 @@
  */
 package classes;
 
+import forms.frmCadastroItems;
+
 /**
  *
  * @author aliso
@@ -39,6 +41,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu8 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
+        desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuRegisters = new javax.swing.JMenu();
         menuRegistersAdd = new javax.swing.JMenu();
@@ -77,7 +80,25 @@ public class frmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de vendas Bacanudo");
 
+        desktopPane.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 775, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 456, Short.MAX_VALUE)
+        );
+
         menuRegisters.setText("Cadastro");
+        menuRegisters.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRegistersMouseClicked(evt);
+            }
+        });
 
         menuRegistersAdd.setText("Cadastrar novo Item");
         menuRegisters.add(menuRegistersAdd);
@@ -116,15 +137,21 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 775, Short.MAX_VALUE)
+            .addComponent(desktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addComponent(desktopPane)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuRegistersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegistersMouseClicked
+        frmCadastroItems cadastroItem = new frmCadastroItems();
+        desktopPane.add(cadastroItem);
+        cadastroItem.show();
+    }//GEN-LAST:event_menuRegistersMouseClicked
 
     /**
      * @param args the command line arguments
@@ -162,6 +189,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JMenu jMenu1;
