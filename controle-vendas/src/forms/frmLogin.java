@@ -7,6 +7,7 @@ package forms;
 
 import classes.Data;
 import classes.frmPrincipal;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -116,6 +117,7 @@ public class frmLogin extends javax.swing.JFrame {
                 new String(tfPassworld.getPassword()))) {
             frmPrincipal principalForm = new frmPrincipal();
             this.setVisible(false);
+            principalForm.setExtendedState(JFrame.MAXIMIZED_BOTH);
             principalForm.setVisible(true);
                         
         } else {
