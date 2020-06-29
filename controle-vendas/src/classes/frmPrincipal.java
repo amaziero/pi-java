@@ -27,8 +27,90 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuRegisters = new javax.swing.JMenu();
+        menuRegistersAdd = new javax.swing.JMenu();
+        menuRegistersMaterials = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menuSells = new javax.swing.JMenu();
+        menuNewSell = new javax.swing.JMenu();
+        menuConsultations = new javax.swing.JMenu();
+        menuConsultationsSells = new javax.swing.JMenu();
+        menuConsultationsStock = new javax.swing.JMenu();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenu16 = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu4.setText("jMenu4");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jCheckBoxMenuItem2.setSelected(true);
+        jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
+
+        jMenu6.setText("jMenu6");
+
+        jMenu7.setText("jMenu7");
+
+        jMenu8.setText("jMenu8");
+
+        jMenu9.setText("jMenu9");
+
+        jMenu10.setText("jMenu10");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de vendas Bacanudo");
+
+        menuRegisters.setText("Cadastro");
+
+        menuRegistersAdd.setText("Cadastrar novo Item");
+        menuRegisters.add(menuRegistersAdd);
+
+        menuRegistersMaterials.setText("Entrada de Material");
+        menuRegisters.add(menuRegistersMaterials);
+        menuRegisters.add(jSeparator1);
+
+        jMenuBar1.add(menuRegisters);
+
+        menuSells.setText("Vendas");
+
+        menuNewSell.setText("Nova Venda");
+        menuSells.add(menuNewSell);
+
+        jMenuBar1.add(menuSells);
+
+        menuConsultations.setText("Consultas");
+
+        menuConsultationsSells.setText("Vendas");
+        menuConsultations.add(menuConsultationsSells);
+
+        menuConsultationsStock.setText("Entradas no estoque");
+        menuConsultationsStock.setToolTipText("");
+        menuConsultations.add(menuConsultationsStock);
+        menuConsultations.add(jSeparator2);
+
+        jMenuBar1.add(menuConsultations);
+
+        jMenu16.setText("Sair");
+        jMenuBar1.add(jMenu16);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -38,7 +120,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 477, Short.MAX_VALUE)
+            .addGap(0, 456, Short.MAX_VALUE)
         );
 
         pack();
@@ -80,5 +162,29 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu16;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JMenu menuConsultations;
+    private javax.swing.JMenu menuConsultationsSells;
+    private javax.swing.JMenu menuConsultationsStock;
+    private javax.swing.JMenu menuNewSell;
+    private javax.swing.JMenu menuRegisters;
+    private javax.swing.JMenu menuRegistersAdd;
+    private javax.swing.JMenu menuRegistersMaterials;
+    private javax.swing.JMenu menuSells;
     // End of variables declaration//GEN-END:variables
 }
