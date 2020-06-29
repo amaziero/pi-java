@@ -6,7 +6,6 @@
 package forms;
 
 import classes.Data;
-import classes.frmPrincipal;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 

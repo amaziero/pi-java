@@ -3,6 +3,7 @@ package conecction;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
@@ -32,15 +33,34 @@ public class ConnectionFactory {
         }
         
     }
-    public static void closeConnection(Connection con, PreparedStatement statment) {
+    public static void closeConnection(
+            Connection con, PreparedStatement statment) {
         
         if(statment != null) {
             try {
-                con.close();
+                statment.close();
             } catch (SQLException ex) {
                 
             }
         }
+        
+        closeConnection(con);
+    }
+    
+    public static void closeConnection(
+            Connection con,
+            PreparedStatement statment,
+            ResultSet result) {
+        
+        if(result != null) {
+            try {
+                result.close();
+            } catch (SQLException ex) {
+                
+            }
+        }
+        
+        closeConnection(con, statment);
         
     }
 }
