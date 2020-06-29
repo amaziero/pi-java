@@ -47,6 +47,8 @@ public class frmCadastroItems extends javax.swing.JInternalFrame {
         jLabel2.setText("Codigo do Item");
         jLabel2.setToolTipText("insira um codigo");
 
+        tfCodigoItem.setEditable(false);
+
         jLabel1.setText("Descrição do Item");
         jLabel1.setToolTipText("Descreva o Item");
 
