@@ -5,6 +5,8 @@
  */
 package forms;
 
+
+
 /**
  *
  * @author aliso
@@ -112,22 +114,7 @@ public class frmAdicionarMaterial extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        Data dados = new Data();
-
-        if(dados.validateUserName(tfUser.getText(),
-            new String(tfPassworld.getPassword()))) {
-        frmPrincipal principalForm = new frmPrincipal();
-        this.setVisible(false);
-        principalForm.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        principalForm.setVisible(true);
-
-        } else {
-            JOptionPane.showMessageDialog(
-                rootPane, "Usuario e senha incorretos");
-            tfUser.setText("");
-            tfPassworld.setText("");
-            tfUser.requestFocus();
-        }
+        
     }//GEN-LAST:event_btLoginActionPerformed
 
     private void btExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExitActionPerformed

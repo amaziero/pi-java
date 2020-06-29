@@ -28,7 +28,7 @@ public class ConnectionFactory {
             try {
                 con.close();
             } catch (SQLException ex) {
-                
+                System.err.println("Erro " + ex);
             }
         }
         
@@ -40,7 +40,7 @@ public class ConnectionFactory {
             try {
                 statment.close();
             } catch (SQLException ex) {
-                
+                System.err.println("Erro " + ex);
             }
         }
         
@@ -56,7 +56,7 @@ public class ConnectionFactory {
             try {
                 result.close();
             } catch (SQLException ex) {
-                
+                System.err.println("Erro " + ex);
             }
         }
         
