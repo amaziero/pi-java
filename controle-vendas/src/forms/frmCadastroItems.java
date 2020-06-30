@@ -5,6 +5,11 @@
  */
 package forms;
 
+import connection.ConnectionFactory;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+
 /**
  *
  * @author aliso
@@ -15,6 +20,7 @@ public class frmCadastroItems extends javax.swing.JInternalFrame {
      * Creates new form frmCadastroItems
      */
     public frmCadastroItems() {
+        this.connection = null;
         initComponents();
     }
 
@@ -140,7 +146,16 @@ public class frmCadastroItems extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        String sql = "INSERT INTO register_item () VALUES (?)";
+        private Connection connection = null;
         
+        PreparedStatement statement = null;
+        connection = ConnectionFactory.getConnection();
+        try {
+            statement = "";
+        } catch (SQLException ex) { 
+            
+        }
     }//GEN-LAST:event_btSalvarActionPerformed
 
 
