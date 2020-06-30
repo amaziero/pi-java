@@ -40,6 +40,11 @@ public class frmNovaVenda extends javax.swing.JInternalFrame {
 
         btExit.setText("Cancelar");
         btExit.setToolTipText("");
+        btExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btExitMouseClicked(evt);
+            }
+        });
         btExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btExitActionPerformed(evt);
@@ -156,6 +161,10 @@ public class frmNovaVenda extends javax.swing.JInternalFrame {
     private void tfNOmeItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNOmeItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNOmeItem1ActionPerformed
+
+    private void btExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btExitMouseClicked
+        this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_btExitMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

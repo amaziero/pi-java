@@ -63,6 +63,11 @@ public class frmCadastroItems extends javax.swing.JInternalFrame {
         jLabel5.setToolTipText("valor de venda por item");
 
         btCancelar.setText("Cancela");
+        btCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCancelarMouseClicked(evt);
+            }
+        });
 
         btSalvar.setText("Salvar");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +147,10 @@ public class frmCadastroItems extends javax.swing.JInternalFrame {
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         
     }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelarMouseClicked
+        this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_btCancelarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
