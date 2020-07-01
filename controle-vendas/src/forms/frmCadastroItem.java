@@ -9,6 +9,7 @@ import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -145,10 +146,17 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
             statement.execute();
             statement.close();
             
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+            
+            tfNomeItem.setText("");
+            tfDescricaoItem.setText("");
+            tfCustoUnitario.setText("");
+            tfPrecoVenda.setText("");
+            
             connection.closeConnection(connected, statement);
         } catch (SQLException ex){
             System.err.println("Erro: " + ex);
-        } 
+        }
     }
     
     

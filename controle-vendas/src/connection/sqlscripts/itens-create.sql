@@ -35,7 +35,8 @@ CREATE TABLE IF NOT EXISTS `pi-java`.`register_item` (
   `description` VARCHAR(100) NULL,
   `name_item` VARCHAR(100) NULL,
   `cost` DOUBLE NULL,
-  `sell_price` DOUBLE NULL)
+  `sell_price` DOUBLE NULL,
+  `quantity` DOUBLE NULL,)
 ENGINE = InnoDB;
 
 
