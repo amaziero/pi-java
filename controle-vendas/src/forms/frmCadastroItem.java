@@ -150,33 +150,7 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//    ConnectionFactory connection = new ConnectionFactory();
-//    
-//    public void addProduct() {
-//        try {
-//            Connection connected = connection.getConnection();
-//            PreparedStatement statement = connected.prepareStatement("INSERT INTO register_item (description, name_item, cost, sell_price) values (?,?,?,?)");
-//            
-//            statement.setString(1, tfDescricaoItem.getText());
-//            statement.setString(2, tfNomeItem.getText());
-//            statement.setString(3, tfCustoUnitario.getText());
-//            statement.setString(4, tfPrecoVenda.getText());
-//            
-//            statement.execute();
-//            statement.close();
-//            
-//            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
-//            
-//            tfNomeItem.setText("");
-//            tfDescricaoItem.setText("");
-//            tfCustoUnitario.setText("");
-//            tfPrecoVenda.setText("");
-//            
-//            connection.closeConnection(connected, statement);
-//        } catch (SQLException ex){
-//            System.err.println("Erro: " + ex);
-//        }
-//    }
+
     
     
     
@@ -191,6 +165,12 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         product.setQuantity(Integer.parseInt(tfQuantidadeInicial.getText()));
         
         dao.create(product);
+        
+        tfNomeItem.setText("");
+        tfDescricaoItem.setText("");
+        tfCustoUnitario.setText("");
+        tfPrecoVenda.setText("");
+        tfQuantidadeInicial.setText("");
         
     }//GEN-LAST:event_btSalvarActionPerformed
 
