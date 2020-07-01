@@ -11,6 +11,12 @@ public class ConnectionFactory {
     private static final String URL = "jdbc:mysql://localhost:3306/pi-java";
     private static final String USER = "root";
     private static final String PASS = "";
+
+    public ConnectionFactory() {
+     
+    }
+    
+   
     
     public static Connection getConnection() {
         try {
@@ -33,6 +39,7 @@ public class ConnectionFactory {
         }
         
     }
+    
     public static void closeConnection(
             Connection con, PreparedStatement statment) {
         

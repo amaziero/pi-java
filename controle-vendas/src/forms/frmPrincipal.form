@@ -96,31 +96,32 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="menuRegisters">
+        <Menu class="javax.swing.JMenu" name="MenuRegisters">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuRegistersMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuRegistersMouseClicked"/>
           </Events>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="menuRegistersAdd">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar novo Item"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuRegistersAddMouseClicked"/>
-              </Events>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="menuRegistersMaterials">
+            <Menu class="javax.swing.JMenu" name="menuAddStock">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entrada de Material"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuRegistersMaterialsMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuAddStockMouseClicked"/>
               </Events>
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuAddNewItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastro Novo Item"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuAddNewItemMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuAddNewItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -169,6 +170,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu16MouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
