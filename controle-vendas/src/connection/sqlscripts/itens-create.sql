@@ -9,34 +9,33 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 
 CREATE SCHEMA IF NOT EXISTS `pi-java` DEFAULT CHARACTER SET utf8 ;
-USE `pi-java` ;
 
+USE `pi-java` ;
 -- -----------------------------------------------------
 -- Table `pi-java`.`add_item`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pi-java`.`add_item` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `qtd` INT NULL,
-  PRIMARY KEY (`id`))
+  `id_product` INT NOT NULL,
+  PRIMARY KEY (`id`)
+  CONSTRAINT `fk_register_item_add_item`
+    FOREIGN KEY (`id_product`)
+    REFERENCES `pi-java`.`register_item` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
+--------------------------- ----------------------------
 -- Table `pi-java`.`register_item`
--- -----------------------------------------------------
+-------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `pi-java`.`register_item` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `description` VARCHAR(100) NULL,
   `name_item` VARCHAR(100) NULL,
   `cost` DOUBLE NULL,
-  `sell_price` DOUBLE NULL,
-  `categoria_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_register_item_add_item`
-    FOREIGN KEY (`categoria_id`)
-    REFERENCES `pi-java`.`add_items` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `sell_price` DOUBLE NULL)
 ENGINE = InnoDB;
 
 
