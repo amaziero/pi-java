@@ -17,7 +17,7 @@ public class ProductDAO {
         Connection connection = ConnectionFactory.getConnection();
         
         try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO register_item (description, name_item, cost, sell_price, quantity) values (?,?,?,?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO register_item (description, name_item, cost, sell_price, quantity) values (?,?,?,?,?)");
 
             statement.setString(1, product.getDescription());
             statement.setString(2, product.getName_item());
@@ -25,10 +25,10 @@ public class ProductDAO {
             statement.setDouble(4, product.getSell_price());
             statement.setInt(5, product.getQuantity());
 
-            statement.execute();
-            statement.close();
+            statement.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+            JOptionPane.showMessageDialog(null,
+                    "Produto cadastrado com sucesso");
 
             /**tfNomeItem.setText("");
             tfDescricaoItem.setText("");
@@ -37,7 +37,9 @@ public class ProductDAO {
             */
 
         } catch (SQLException ex) {
-            System.err.println("Erro: " + ex);
+            System.err.println("Erro ao salvar: " + ex);
+        } finally {
+            ConnectionFactory.closeConnection(connection);
         }
     }
 }

@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `pi-java`.`add_item` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `qtd` INT NULL,
   `id_product` INT NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_register_item_add_item`
     FOREIGN KEY (`id_product`)
     REFERENCES `pi-java`.`register_item` (`id`)
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `pi-java`.`register_item` (
   `name_item` VARCHAR(100) NULL,
   `cost` DOUBLE NULL,
   `sell_price` DOUBLE NULL,
-  `quantity` DOUBLE NULL,)
+  `quantity` DOUBLE NULL)
 ENGINE = InnoDB;
 
 
