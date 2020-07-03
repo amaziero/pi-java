@@ -5,11 +5,6 @@
  */
 package forms;
 
-import connection.ConnectionFactory;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import model.bean.Product;
@@ -31,10 +26,16 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         DefaultTableModel table = (DefaultTableModel) listProducts.getModel();
         listProducts.setRowSorter(new TableRowSorter(table));
         
-        readTable();
+        readTableProducts();
+        
+        
+        DefaultTableModel tableAddProducts = (DefaultTableModel) AddItemVeiw.getModel();
+        AddItemVeiw.setRowSorter(new TableRowSorter(tableAddProducts));
+        
+        readTableStock();
     }
     
-    public void readTable() {
+    public void readTableProducts() {
         DefaultTableModel table = (DefaultTableModel) listProducts.getModel();
         table.setNumRows(0);
         ProductDAO productDAO = new ProductDAO();
@@ -47,6 +48,20 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
                 p.getCost(),
                 p.getSell_price(),
                 p.getQuantity()
+            });
+        }
+    }
+    
+    public void readTableStock() {
+        DefaultTableModel table = (DefaultTableModel) AddItemVeiw.getModel();
+        table.setNumRows(0);
+        ProductAddDAO productAddDAO = new ProductAddDAO();
+        
+        for(ProductAdd p: productAddDAO.read()) {
+            table.addRow(new Object[]{
+                p.getId(),
+                p.getDescription(),
+                p.getQtd()
             });
         }
     }
@@ -81,10 +96,10 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         quantidadeAdicionada = new javax.swing.JTextField();
-        btCancelar1 = new javax.swing.JButton();
+        btAtualizarStoque = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        AddItemVeiw = new javax.swing.JTable();
         btCancelar = new javax.swing.JButton();
 
         setTitle("Adicionar, Atualizar e Consultar Items");
@@ -220,10 +235,10 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         jLabel9.setToolTipText("Quantidade a ser inserida");
         jLabel9.setAutoscrolls(true);
 
-        btCancelar1.setText("Atualizar");
-        btCancelar1.addActionListener(new java.awt.event.ActionListener() {
+        btAtualizarStoque.setText("Atualizar");
+        btAtualizarStoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelar1ActionPerformed(evt);
+                btAtualizarStoqueActionPerformed(evt);
             }
         });
 
@@ -246,7 +261,7 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addComponent(btCancelar1)
+                .addComponent(btAtualizarStoque)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -262,11 +277,11 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
                     .addComponent(quantidadeAdicionada, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(btCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btAtualizarStoque, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        AddItemVeiw.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -282,7 +297,7 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(AddItemVeiw);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -361,7 +376,7 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         product.setQuantity(Integer.parseInt(tfQuantidadeInicial.getText()));
         
         dao.create(product);
-        readTable();
+        readTableProducts();
         
         tfNomeItem.setText("");
         tfDescricaoItem.setText("");
@@ -379,7 +394,7 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_listProductsMouseClicked
 
-    private void btCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelar1ActionPerformed
+    private void btAtualizarStoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarStoqueActionPerformed
         ProductAdd productAdd = new ProductAdd();
         ProductAddDAO dao = new ProductAddDAO();
         
@@ -390,14 +405,16 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
         dao.updateDescription(productAdd);
         dao.updateEstoque(productAdd);
         
-        readTable();
-    }//GEN-LAST:event_btCancelar1ActionPerformed
+        readTableProducts();
+        readTableStock();
+    }//GEN-LAST:event_btAtualizarStoqueActionPerformed
   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable AddItemVeiw;
+    private javax.swing.JButton btAtualizarStoque;
     private javax.swing.JButton btCancelar;
-    private javax.swing.JButton btCancelar1;
     private javax.swing.JButton btSalvar;
     private javax.swing.JTextField idProduto;
     private javax.swing.JLabel jLabel1;
@@ -414,7 +431,6 @@ public class frmCadastroItem extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable listProducts;
     private javax.swing.JTextField quantidadeAdicionada;
     private javax.swing.JTextField tfCustoUnitario;

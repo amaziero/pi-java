@@ -12,9 +12,7 @@ import model.bean.ProductAdd;
 
 
 public class ProductAddDAO {
-    
-    
-    
+     
     public void create(ProductAdd product) {
         Connection connection = ConnectionFactory.getConnection();
         
@@ -56,7 +54,7 @@ public class ProductAddDAO {
                 
                 product.setId(resultSet.getInt("id"));
                 product.setDescription(resultSet.getString("description"));
-                
+                product.setQtd(resultSet.getInt("qtd"));
                 
                 products.add(product);
                 
