@@ -38,15 +38,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuRegisters = new javax.swing.JMenu();
-        menuAddStock = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         menuAddNewItem = new javax.swing.JMenuItem();
         menuSells = new javax.swing.JMenu();
         menuNewSell = new javax.swing.JMenu();
-        menuConsultations = new javax.swing.JMenu();
-        menuConsultationsSells = new javax.swing.JMenu();
-        menuConsultationsStock = new javax.swing.JMenu();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu16 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -93,17 +88,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                 MenuRegistersMouseClicked(evt);
             }
         });
-
-        menuAddStock.setText("Entrada de Material");
-        menuAddStock.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuAddStockMouseClicked(evt);
-            }
-        });
-        MenuRegisters.add(menuAddStock);
         MenuRegisters.add(jSeparator1);
 
-        menuAddNewItem.setText("Cadastro Novo Item");
+        menuAddNewItem.setText("Cadastrar e Adicionar Items");
         menuAddNewItem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuAddNewItemMouseClicked(evt);
@@ -129,28 +116,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         menuSells.add(menuNewSell);
 
         jMenuBar1.add(menuSells);
-
-        menuConsultations.setText("Consultas");
-        menuConsultations.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuConsultationsMouseClicked(evt);
-            }
-        });
-
-        menuConsultationsSells.setText("Vendas");
-        menuConsultations.add(menuConsultationsSells);
-
-        menuConsultationsStock.setText("Entradas no estoque");
-        menuConsultationsStock.setToolTipText("");
-        menuConsultationsStock.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuConsultationsStockMouseClicked(evt);
-            }
-        });
-        menuConsultations.add(menuConsultationsStock);
-        menuConsultations.add(jSeparator2);
-
-        jMenuBar1.add(menuConsultations);
 
         jMenu16.setText("Sair");
         jMenu16.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,12 +145,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_MenuRegistersMouseClicked
 
-    private void menuAddStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAddStockMouseClicked
-        frmAdicionarMaterial adicionarMaterial = new frmAdicionarMaterial();
-        desktopPane.add(adicionarMaterial);
-        adicionarMaterial.show();
-    }//GEN-LAST:event_menuAddStockMouseClicked
-
     private void menuSellsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSellsMouseClicked
        
         frmNovaVenda novaVenda = new frmNovaVenda();
@@ -193,19 +152,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         novaVenda.show();
 
     }//GEN-LAST:event_menuSellsMouseClicked
-
-    private void menuConsultationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultationsMouseClicked
-        frmConsultaVenda consultaVenda = new frmConsultaVenda();
-        desktopPane.add(consultaVenda);
-        consultaVenda.show();
-    }//GEN-LAST:event_menuConsultationsMouseClicked
-
-    private void menuConsultationsStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsultationsStockMouseClicked
-       
-        frmConsultaEntradaMaterial consultaEntradaMaterial = new frmConsultaEntradaMaterial();
-        desktopPane.add(consultaEntradaMaterial);
-        consultaEntradaMaterial.show(); // TODO add your handling code here:
-    }//GEN-LAST:event_menuConsultationsStockMouseClicked
 
     private void jMenu16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu16MouseClicked
         this.dispose();
@@ -274,12 +220,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenuItem menuAddNewItem;
-    private javax.swing.JMenu menuAddStock;
-    private javax.swing.JMenu menuConsultations;
-    private javax.swing.JMenu menuConsultationsSells;
-    private javax.swing.JMenu menuConsultationsStock;
     private javax.swing.JMenu menuNewSell;
     private javax.swing.JMenu menuSells;
     // End of variables declaration//GEN-END:variables

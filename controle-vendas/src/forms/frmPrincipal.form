@@ -104,19 +104,11 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuRegistersMouseClicked"/>
           </Events>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="menuAddStock">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Entrada de Material"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuAddStockMouseClicked"/>
-              </Events>
-            </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuAddNewItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastro Novo Item"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar e Adicionar Items"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuAddNewItemMouseClicked"/>
@@ -138,32 +130,6 @@
                 <Property name="text" type="java.lang.String" value="Nova Venda"/>
               </Properties>
             </Menu>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="menuConsultations">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Consultas"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsultationsMouseClicked"/>
-          </Events>
-          <SubComponents>
-            <Menu class="javax.swing.JMenu" name="menuConsultationsSells">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Vendas"/>
-              </Properties>
-            </Menu>
-            <Menu class="javax.swing.JMenu" name="menuConsultationsStock">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Entradas no estoque"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsultationsStockMouseClicked"/>
-              </Events>
-            </Menu>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
-            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu16">
