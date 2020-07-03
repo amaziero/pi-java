@@ -16,11 +16,12 @@ USE `pi-java` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pi-java`.`add_item` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `description` VARCHAR(100),
   `qtd` INT NULL,
-  `id_product` INT NOT NULL,
+  `id_register_item` INT,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_register_item_add_item`
-    FOREIGN KEY (`id_product`)
+    FOREIGN KEY (`id_register_item`)
     REFERENCES `pi-java`.`register_item` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
